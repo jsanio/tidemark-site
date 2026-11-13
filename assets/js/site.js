@@ -3,6 +3,14 @@
    drift on the photos. Everything stops for visitors who ask for reduced motion. */
 (function () {
   var root = document.documentElement;
+  // the sticky header slims down once the page has scrolled (works with or without reduced motion)
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var setHeader = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+    setHeader();
+    window.addEventListener('scroll', setHeader, { passive: true });
+  }
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) { root.classList.remove('js'); return; }
 
