@@ -48,7 +48,16 @@
     </div>
     <div class="book" id="book">
       <p class="eyebrow sm">Book a time</p>
-      <a class="btn btn-accent" href="#booking-link">Book an intro call</a>
+      <form class="intro-form" id="intro-form" action="#" method="post" data-endpoint="https://script.google.com/macros/s/AKfycbw6w2yint3seEdex0EyTMitqxa5xjQocogBJjadYpCclmxHV26YH7_v5OlwnRqFihboAA/exec">
+        <p class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120"></p>
+        <p class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200"></p>
+        <p class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" autocomplete="organization" required maxlength="160"></p>
+        <p class="field"><label for="f-topic">What would you like to talk about? <span class="opt">(optional)</span></label><textarea id="f-topic" name="topic" rows="4" maxlength="2000"></textarea></p>
+        <p class="field hp" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></p>
+        <button class="btn btn-accent" type="submit">Book an intro call</button>
+        <p class="form-note">I will reply by email to find a time. I only use your details to answer you.</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
       <hr>
       <p class="eyebrow sm">Prefer email?</p>
       <p class="email"><a href="mailto:jason@tidemark.llc">jason@tidemark.llc</a></p>

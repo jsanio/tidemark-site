@@ -89,3 +89,30 @@
     drift();
   }
 })();
+
+/* intro-call form: posts to the Google Apps Script web app named in data-endpoint */
+(function () {
+  var form = document.getElementById('intro-form');
+  if (!form) return;
+  var status = form.querySelector('.form-status');
+  var button = form.querySelector('button[type="submit"]');
+  var mail = 'mailto:jason@tidemark.llc';
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var endpoint = form.getAttribute('data-endpoint');
+    if (!endpoint) { status.textContent = 'This form is not connected yet. Please email jason@tidemark.llc.'; return; }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    button.disabled = true;
+    status.textContent = 'Sending…';
+    fetch(endpoint, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) })
+      .then(function () {
+        form.classList.add('sent');
+        status.textContent = 'Thank you. I will email you soon to find a time.';
+      })
+      .catch(function () {
+        button.disabled = false;
+        status.innerHTML = 'That did not send. Please email <a href="' + mail + '">jason@tidemark.llc</a>.';
+      });
+  });
+})();
