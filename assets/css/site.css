@@ -332,3 +332,10 @@ h1, h2, h3, .lead { text-wrap: balance; }
 /* link inside the brand-moments heading: gold underline, brightens on hover */
 .moment h2 a { text-decoration: underline; text-decoration-color: var(--burnished-gold); text-decoration-thickness: 2px; text-underline-offset: 6px; transition: text-decoration-color var(--t) var(--ease); }
 @media (hover: hover) { .moment h2 a:hover { text-decoration-color: var(--ink-inverse); } }
+
+/* Results: short head, straight into the cards */
+.page-head.compact { padding-block: clamp(40px, 6vw, 64px) 0; border-bottom: 0; }
+.section.tight { padding-top: var(--space-5); }
+
+/* Results subhead: one line on tablet and desktop, wraps only on small screens */
+@media (min-width: 721px) { .page-head.compact .lead { max-width: none; text-wrap: nowrap; } }
