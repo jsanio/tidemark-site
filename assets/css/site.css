@@ -318,3 +318,17 @@ a { color: inherit; }
   *, *::before, *::after { transition-duration: .01ms !important; }
   .btn:hover, .btn:active { transform: none; }
 }
+
+/* line breaks: no single word left alone on the last line */
+p, dd, li { text-wrap: pretty; }
+h1, h2, h3, .lead { text-wrap: balance; }
+
+/* results cards: share rows across the three cards so headings are centred in the same band and body text starts level */
+@media (min-width: 881px) {
+  .result { display: grid; grid-row: span 4; grid-template-rows: subgrid; }
+  .result h3 { align-self: center; }
+}
+
+/* link inside the brand-moments heading: gold underline, brightens on hover */
+.moment h2 a { text-decoration: underline; text-decoration-color: var(--burnished-gold); text-decoration-thickness: 2px; text-underline-offset: 6px; transition: text-decoration-color var(--t) var(--ease); }
+@media (hover: hover) { .moment h2 a:hover { text-decoration-color: var(--ink-inverse); } }
