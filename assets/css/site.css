@@ -228,7 +228,7 @@ a { color: inherit; }
 @media (max-width: 600px) {
   body { font-size: 16px; line-height: 26px; }
   .site-nav { flex-wrap: wrap; }
-  .site-nav .btn { width: 100%; }
+  .site-nav .btn { display: none; } /* the page has its own call-to-action; the header one only crowds a phone */
   .offers { grid-template-columns: 1fr; }
   .channels { grid-template-columns: repeat(2, 1fr); }
   .offer .row { grid-template-columns: 1fr; gap: var(--space-1); }
