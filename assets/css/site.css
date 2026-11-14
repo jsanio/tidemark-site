@@ -194,7 +194,7 @@ a { color: inherit; }
 .idcard li { border-top: 1px solid var(--line-strong); padding: var(--space-3) 0; }
 .idcard li b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 11px; line-height: 16px; letter-spacing: .22em; text-transform: uppercase; color: var(--burnished-gold); }
 .bio p + p { margin-top: var(--space-4); }
-.candid { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 20%; filter: saturate(.88); margin: var(--space-6) 0; }
+.candid { width: 100%; aspect-ratio: 11 / 8; object-fit: cover; object-position: 50% 28%; filter: saturate(.88); margin: var(--space-6) 0; }
 .bio .fun { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--rule-mark) solid var(--burnished-gold); color: var(--ink-muted); }
 
 .contact { display: grid; grid-template-columns: 1fr 440px; gap: var(--space-8); align-items: start; }
