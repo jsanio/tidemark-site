@@ -34,17 +34,17 @@
   });
 
   function countUp(fig) {
-    var m = /^(\d+)(.*)$/.exec(fig.textContent.trim());
+    var m = /^(\D*)(\d+)(.*)$/.exec(fig.textContent.trim());
     if (!m) return;
-    var end = parseInt(m[1], 10), tail = m[2], start = null, dur = 1100;
+    var head = m[1], end = parseInt(m[2], 10), tail = m[3], start = null, dur = 1100;
     fig.setAttribute('aria-label', fig.textContent.trim());
     function step(t) {
       if (start === null) start = t;
       var p = Math.min((t - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
-      fig.textContent = Math.round(end * e) + tail;
+      fig.textContent = head + Math.round(end * e) + tail;
       if (p < 1) requestAnimationFrame(step);
     }
-    fig.textContent = '0' + tail;
+    fig.textContent = head + '0' + tail;
     requestAnimationFrame(step);
   }
 

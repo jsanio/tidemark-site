@@ -362,3 +362,8 @@ h1, h2, h3, .lead { text-wrap: balance; }
 .audiences .card { display: grid; grid-row: span 8; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
 .audiences dl { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
 .result { row-gap: 0; }
+
+/* About: single photo with caption (replaces portrait + ID card) */
+.about .side { margin: 0; }
+.about .side .candid { margin: 0; aspect-ratio: 4 / 5; }
+.about .side figcaption { margin-top: var(--space-3); color: var(--ink-muted); font-style: italic; }
