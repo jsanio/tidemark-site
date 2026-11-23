@@ -367,3 +367,27 @@ h1, h2, h3, .lead { text-wrap: balance; }
 .about .side { margin: 0; }
 .about .side .candid { margin: 0; aspect-ratio: 4 / 5; }
 .about .side figcaption { margin-top: var(--space-3); color: var(--ink-muted); font-style: italic; }
+
+/* Contact: left column carries "what to expect" and the email/LinkedIn links */
+.expect { margin-top: var(--space-7); max-width: 560px; }
+.expect .eyebrow { margin-bottom: var(--space-3); }
+.expect ul { list-style: none; margin: 0; padding: 0; }
+.expect li { border-top: 1px solid var(--line-strong); padding: var(--space-3) 0; }
+.expect li b { font-family: var(--font-display); font-weight: 600; }
+.expect li:last-child { border-bottom: 1px solid var(--line-strong); }
+.reach { margin-top: var(--space-6); }
+.reach .email { margin-top: var(--space-1); }
+.reach .social { margin-top: var(--space-2); }
+.reach a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; text-decoration-color: currentColor; transition: color var(--t) var(--ease), text-decoration-color var(--t) var(--ease); }
+@media (hover: hover) { .reach a:hover { color: var(--accent-text); text-decoration-color: var(--burnished-gold); } }
+@media (max-width: 880px) { .expect { margin-top: var(--space-6); } }
+.reach-m { display: none; }
+@media (max-width: 880px) { .reach-d { display: none; } .reach-m { display: block; margin-top: 0; } }
+/* phones: heading, then the form, then What to expect, then email/LinkedIn */
+@media (max-width: 880px) {
+  .contact .intro { display: contents; }
+  .contact .intro-head { order: 0; }
+  .contact .book { order: 1; }
+  .contact .expect { order: 2; margin-top: 0; }
+  .contact .reach-m { order: 3; }
+}
