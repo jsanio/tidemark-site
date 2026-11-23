@@ -383,3 +383,11 @@ h1, h2, h3, .lead { text-wrap: balance; }
 @media (max-width: 880px) { .expect { margin-top: var(--space-6); } }
 .reach-m { display: none; }
 @media (max-width: 880px) { .reach-d { display: none; } .reach-m { display: block; margin-top: 0; } }
+/* phones: heading, then the form, then What to expect, then email/LinkedIn */
+@media (max-width: 880px) {
+  .contact .intro { display: contents; }
+  .contact .intro-head { order: 0; }
+  .contact .book { order: 1; }
+  .contact .expect { order: 2; margin-top: 0; }
+  .contact .reach-m { order: 3; }
+}
